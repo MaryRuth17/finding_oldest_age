@@ -1,7 +1,8 @@
 
-cpe_1_7 = [] #putting the info in an array
-
-while True: #loop for the user info
+def main():
+    cpe_1_7 = [] #putting the info in an array
+    
+    while True: #loop for the user info
         try:
             #asking user info
             name = input("Please input the name: ")
@@ -32,3 +33,20 @@ while True: #loop for the user info
 
         if add.lower() == "no":
             break
+
+    if cpe_1_7: #setting the first user as the oldest using if else
+        oldest_name = cpe_1_7[0][0]
+        oldest_age = cpe_1_7[0][1]
+        
+        for user in cpe_1_7: #comparing the first oldest to the other user info to get the oldest
+            if user[1] > oldest_age:
+                oldest_name = user[0]
+                oldest_age = user[1]
+                
+        print(f"The oldest person is {oldest_name} with the age of {oldest_age}.")
+    
+    else:
+        print("No valid input were collected")
+
+if __name__ == "__main__":
+    main()
