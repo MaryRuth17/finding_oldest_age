@@ -1,4 +1,5 @@
 
+cpe_1_7 = [] #putting the info in an array
 
 while True: #loop for the user info
         try:
@@ -8,6 +9,9 @@ while True: #loop for the user info
             age = int(input("Please input the age: "))
             if age <= 0:
                 raise
+
+            # Add the name and age as a tuple to the array
+            cpe_1_7.append((name, age))
 
             print("The name:", name)
             print("The age:", age)
