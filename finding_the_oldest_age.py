@@ -5,6 +5,8 @@ while True: #loop for the user info
         try:
             #asking user info
             name = input("Please input the name: ")
+            if not name.isalpha():
+                raise
             
             age = int(input("Please input the age: "))
             if age <= 0:
@@ -17,10 +19,10 @@ while True: #loop for the user info
             print("The age:", age)
 
             while True:  # loop for adding more input
-                add = input("Want to add more input? (yes/no): ")  # to ask another info
-                if add == "yes":
+                add = input("Want to add more input? (yes/no): ").lower()  # to ask another info
+                if add.lower() == "yes":
                     break  # to continue the outer loop
-                if add == "no":
+                if add.lower() == "no":
                     break
                 else:
                     print("Invalid response")
@@ -28,5 +30,5 @@ while True: #loop for the user info
         except:
             print("Error: Invalid input")
 
-        if add == "no":
+        if add.lower() == "no":
             break
